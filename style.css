@@ -3,11 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-body {
-}
-.empty {
-    min-height: 100vh;
-    background: gray;
+a {
+    text-decoration: none;
 }
 .slider {
     display: flex;
@@ -26,11 +23,19 @@ body {
     overflow: hidden;
 
 }
+.slide-container {
+    position: relative;
+}
 .slide {
-    width: 40vmin;
-  height: 56vmin;
+    width: 40vmin !important;
+  height: 56vmin !important;
   object-fit: cover;
   object-position: 100% center;
+  user-select: none
+}
+
+.slide:hover .slider-container {
+    background-color: red;
 }
 .slide-content {
     position: absolute;
@@ -43,6 +48,9 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.373);
+    font-family: 'Luckiest Guy', cursive;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
 }
 .slide-title {
     font-size: 2.8vw;
@@ -52,6 +60,34 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: white;
-    font-family: 'Luckiest Guy', cursive;
     pointer-events: none;
+    user-select: none;
+}
+.slide-btn {
+    font-size: 1vw;
+    color: white;
+    user-select: none;
+}
+.slide-container:hover .slide-content {
+    opacity: 1;
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .slide, .slide-content {
+        width: 100vmin !important;
+        height: 80vh !important;
+    }
+    .slide-title {
+        font-size: 12vw;
+    }
+    .slide-btn {
+        font-size: 5vw;
+    }
+    .slide-content {
+        opacity: 1;
+    }
 }
