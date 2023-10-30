@@ -3,13 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+}
 .empty {
     min-height: 100vh;
     background: gray;
 }
 .slider {
     display: flex;
-    gap: 1em;
+    gap: 1.5em;
     position: absolute;
     top: 50%;
     left: 25%;
@@ -19,13 +21,37 @@
 }
 .slider-container {
     min-height: 100vh;
-    background-color: red;
-    overflow-x: hidden;
+    background-color: black;
     position: relative;
+    overflow: hidden;
+
 }
 .slide {
     width: 40vmin;
   height: 56vmin;
   object-fit: cover;
   object-position: 100% center;
+}
+.slide-content {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 40vmin;
+    height: 56vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.373);
+}
+.slide-title {
+    font-size: 2.8vw;
+    font-weight: 800;
+    background-image: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=4548&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') ;
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    pointer-events: none;
 }
