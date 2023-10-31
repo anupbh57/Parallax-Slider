@@ -33,7 +33,18 @@ a {
   object-position: 100% center;
   user-select: none
 }
-
+.slide-container::before {
+    content: '';
+    height: 56vmin;
+    width: 40vmin;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(3, 243, 195, 0.498), rgba(14, 189, 145, 0.36), rgba(7, 117, 99, 0.16), transparent 70%);
+  border-radius: inherit;
+  transition: all ease-in-out 0.3s;
+}
 .slide:hover .slider-container {
     background-color: red;
 }
